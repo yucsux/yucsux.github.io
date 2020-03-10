@@ -17,7 +17,7 @@ $(function () {
     function refreshGame() {
         var items = $('.gameBody .row .item');
         for (var i = 0; i < items.length; i++) {
-            items.eq(i).html('').removeClass('nonEmptyItem').addClass('emptyItem');
+            items.eq(i).html('空').removeClass('nonEmptyItem').addClass('emptyItem');
         }
         gameScore = 0;
         //分数清零
