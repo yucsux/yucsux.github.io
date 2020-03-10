@@ -68,9 +68,9 @@ $(function () {
         if (sideItem.length == 0) {//当前元素在最边上
             //不动
 
-        } else if (sideItem.html() == '') { //当前元素不在最后一个且左（右、上、下）侧元素是空元素
+        } else if (sideItem.html() == '空') { //当前元素不在最后一个且左（右、上、下）侧元素是空元素
             sideItem.html(currentItem.html()).removeClass('emptyItem').addClass('nonEmptyItem');
-            currentItem.html('').removeClass('nonEmptyItem').addClass('emptyItem');
+            currentItem.html('空').removeClass('nonEmptyItem').addClass('emptyItem');
             itemMove(sideItem, direction);
             isNewRndItem = true;
 
@@ -80,7 +80,7 @@ $(function () {
         } else {//左（右、上、下）侧元素和当前元素内容相同
             //向右合并
             sideItem.html((sideItem.html() - 0) * 2);
-            currentItem.html('').removeClass('nonEmptyItem').addClass('emptyItem');
+            currentItem.html('空').removeClass('nonEmptyItem').addClass('emptyItem');
             gameScore += (sideItem.text() - 0) * 10;
             $('#gameScore').html(gameScore);
             // itemMove(sideItem, direction);
