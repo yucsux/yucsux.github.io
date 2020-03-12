@@ -22,6 +22,14 @@ position : fixed;
 top : 5%;
 }
 
+.gamebox {
+position : fixed;
+top : 10%;
+height : 80%;
+width : 100%;
+background-color : #00a7d0;
+}
+
 .bottom-div {
 display : flex;
 height : 5%;
@@ -34,7 +42,7 @@ bottom : 5%;
 .bottom-btn {
 width : 25%;
 height : 100%;
-background : black;
+background-color : black;
 color : white;
 }
 
