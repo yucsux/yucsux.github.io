@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<title>带你回家</title>
+<audio src="muc/music.mp3" id="bgsound" loop=""></audio>
+<audio src="muc/click.aac" id="m.click" preload=""></audio>
+<audio src="muc/enter.aac" id="m.enter" preload=""></audio>
+<audio src="muc/push.aac" id="m.push" preload=""></audio>
+<audio src="muc/move.aac" id="m.move" preload=""></audio>
+<audio src="muc/no-push.aac" id="m.nopush" preload=""></audio>
+<audio src="muc/no-move.aac" id="m.nomove" preload=""></audio>
+<audio src="muc/finish.aac" id="m.finish" preload=""></audio>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, height=device-height"/>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<script src="js/main.js"></script>
+</head>
+<body onload="init()">
+<header class="header">
+<p style="text-align:center; font-weight:bold">
+带你回家小游戏 By <a style="color:black" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=327567618&site=qq&menu=yes"><img border="0" src="img/yucsux.jpg" width="20px" height="20px">子兮何息</a></p>
+</header>
+<div class="top-div">
+<div id="level" data-level=1 style="color:blue; background:gray; width:33%">
+当前 第1 关
+</div>
+<div id="time" data-time=0 style="color:red; background:gray; width:33%">
+用时 0 s
+</div>
+<div id="step" data-step=0 style="color:green; background:gray; width:33%">
+行动 0 次
+</div>
+</div>
+
+<div class="gamebox" id="gamebox"></div>
+
+<div class="bottom-div">
+<button type="button" class="bottom-btn" onclick="changeLevel(1)">后一关</button>
+<button type="button" class="bottom-btn" onclick="changeLevel(-1)">前一关</button>
+<button type="button" class="bottom-btn" onclick="changeLevel(0)">复原</button>
+<button type="button" class="bottom-btn" onclick="showHelp()">帮助</button>
+</div>
+<footer class="footer">
+<div>
+该项目实现于：<a href="https://github.com/" target="_blank">GitHub</a>赠与最可爱的你。
+</div>
+	</footer>
+
+<!-- Hide content -->
+
+
+<div id="dialog_over" style="display:none; position:fixed; top:20%; left:10%; width:80%; height:60%; background-image:url(../img/over.jpg); background-repeat:no-repeat; background-size:100% 100%;">
+<h3 class="item">通关</h3>
+<div class="item">恭喜~~成功通过本关！</div>
+<div class="item" id="over_time"></div>
+<div class="item" id="over_step"></div>
+<div id="over_text1" class="item"></div>
+<div id="over_text2" class="item"></div>
+<button type="button" onclick="closeOver(1)" style="background:transparent; color:yellow; position:fixed; left:20%; bottom:20%; width:25%">开始下一关</button>
+<button type="button" onclick="closeOver(0)" style="background:transparent; color:yellow; position:fixed; right:20%; bottom:20%; width:25%">再看看</button></div>
+</div>
+<div id="dialog_help" style="display:none; position:fixed; top:20%; left:10%; width:80%; height:60%; background-image:url(../img/help.jpg); background-repeat:no-repeat; background-size:100% 100%;">
+<h3 class="item">带你回家游戏介绍</h3>
+<div class="item">你看，星空里有许多无家可归的星(xin)星(xin)呢！</div>
+<div class="item">快带着这些可爱的星星们回家去吧！看~那只垃圾桶，像不像是星星们极好的住处？</div>
+<div class="item">点击紧邻角色四个方向的格子可控制角色移动。</div>
+<div class="item">点击底部'复原'按钮可重新开始本观挑战。</div>
+<div class="item">(前、后)一关可跳过关卡开启新的挑战。</div>
+<button type="button" onclick="closeHelp()" style="position:fixed; left:30%; bottom:20%; width:40%">我知道了</button>
+</div>
+<div id="dialog_hello" style="position:fixed; top:20%; left:20%; width:60%; height:60%;">
+<h3 class="item">写在前面</h3>
+<div class="item">我有一个朋友</div>
+<div class="item">一次聊天朋友说：</div>
+<div class="item"><b>“推箱子呀，可以说童年的回忆啦！”</b></div>
+<div class="item">于是我利用了一些电脑操作基本知识</div>
+<div class="item">外加自己的一点恶趣味……</div>
+<div class="item">结果是——<strong>带你回家</strong></div>
+<div class="item">邬尚辰（我的姐姐）参与了本游戏的UI设计</div>
+<div class="item">特此鸣谢！</div>
+<button type="button" onclick="gameStart()" style="position:fixed; left:30%; bottom:20%; width:40%">开始游戏</button>
+</div>
+</body>
+</html>
